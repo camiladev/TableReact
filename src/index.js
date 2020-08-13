@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import categoryRepository from './repositores/categoria';
 
 function ButtonDelete(props){
     return (
@@ -46,11 +47,11 @@ class ProductRow extends React.Component {
   class ProductTable extends React.Component {
     render() {
       const rows = [];    
-      
+      console.log('Tabela: ', this.props.categ)
       this.props.category.forEach((category) => {      
         rows.push(
           <ProductRow
-            category={category}
+            category={this.category}
             key={category.id}
             onClick={() => this.props.onClick(category)}
          />
@@ -77,11 +78,35 @@ class ProductRow extends React.Component {
     constructor(props){
       super(props);
       this.state = {
-          selecte: [],
-      }
-      
+        category: "AAAA"
+      };
+      this.fn = this.fn.bind(this);      
     }
-
+  fn() {
+      this.setState({category :"OI"});
+      
+    };
+    // ============
+    buscaCategoria(lista){
+      lista = this.state.category;
+      
+      categoryRepository.getAll()
+        .then((category) => {
+          lista = category;
+          this.setState ({category: "O"});
+          console.log('Busca: ', category);
+          console.log('Busca2: ', this.state.category);
+          console.log('Busca3: ', lista);  
+        })
+        
+        .catch((err) => {
+          console.log('Erro Busca: ',err.message);
+        });
+        //this.setState.category = "Oi porra";
+        console.log('Busca2: ', this.state.category);      }
+    // ============
+  
+    
     categorySelect(value){
         const selecte = value;
         this.setState = {
@@ -90,14 +115,16 @@ class ProductRow extends React.Component {
         alert('Selecionado: ' + selecte.id);
         console.log("Selecionado: ", selecte.titulo);
     }   
-    render() {
     
-
+    render() {
+    const c = this.state.category;
+    const categ = this.buscaCategoria(c);
+    console.log('render Busca: ',categ);  
       return (
         <div>    
             <div>
                 <ProductTable 
-                    category={this.props.category} 
+                    categ={categ} 
                     onClick={value => this.categorySelect(value)}
                     
                 />
@@ -119,9 +146,11 @@ class ProductRow extends React.Component {
     {id: '3', cor: '#9cd33b', stocked: true, titulo: 'Filmes'},
     {id: '4', cor: 'orange', stocked: true, titulo: 'Games'},
   ];
+  
+ 
    
   ReactDOM.render(
-    <FilterableProductTable category={CATEGORY} />,
+    <FilterableProductTable />,
     document.getElementById('root')
   );
   
