@@ -78,32 +78,23 @@ class ProductRow extends React.Component {
     constructor(props){
       super(props);
       this.state = {
-        category: "AAAA"
+        category: [],
       };
-      this.fn = this.fn.bind(this);      
+            
     }
-  fn() {
-      this.setState({category :"OI"});
-      
-    };
-    // ============
-    buscaCategoria(lista){
-      lista = this.state.category;
-      
+    componentDidMount(){
       categoryRepository.getAll()
-        .then((category) => {
-          lista = category;
-          this.setState ({category: "O"});
-          console.log('Busca: ', category);
-          console.log('Busca2: ', this.state.category);
-          console.log('Busca3: ', lista);  
+      .then(response => {
+        this.setState({
+          category: response.category
         })
-        
-        .catch((err) => {
-          console.log('Erro Busca: ',err.message);
-        });
-        //this.setState.category = "Oi porra";
-        console.log('Busca2: ', this.state.category);      }
+      })
+      .catch((err) => {
+        console.log('Erro Busca: ',err.message);
+      })
+
+    }
+    
     // ============
   
     
@@ -117,15 +108,16 @@ class ProductRow extends React.Component {
     }   
     
     render() {
-    const c = this.state.category;
-    const categ = this.buscaCategoria(c);
-    console.log('render Busca: ',categ);  
+  
       return (
         <div>    
             <div>
+              <div>
+                  <h1>{this.state.category}</h1>
+              </div>
                 <ProductTable 
-                    categ={categ} 
-                    onClick={value => this.categorySelect(value)}
+                   // categ={categ} 
+                   // onClick={value => this.categorySelect(value)}
                     
                 />
             </div>    
