@@ -15,17 +15,28 @@ function ButtonDelete(props){
 class ProductRow extends React.Component {
     render() {
       const category = this.props.category;
-      
+
       return (
-        <tr>
-          <td>{category.titulo}</td>
-          <td>{category.cor}</td>
-          <td>
-            <ButtonDelete value={category}
-                          onClick={() => this.props.onClick(category)}
-            />
-          </td>
-        </tr>
+
+        <>
+          {
+            category.map( function(categorias){
+              return (
+                <tr>
+
+                <td>{categorias.titulo}</td>
+                <td>{categorias.cor}</td>
+                <td>
+                  <ButtonDelete value={categorias}
+                                onClick={() => this.props.onClick(category)}
+                  />
+                </td>
+                </tr>
+
+              );
+            })
+          }
+        </>
       );
     }
   }
@@ -51,7 +62,7 @@ class ProductRow extends React.Component {
       this.props.category.forEach((category) => {      
         rows.push(
           <ProductRow
-            category={this.category}
+            category={this.props.category}
             key={category.id}
             onClick={() => this.props.onClick(category)}
          />
@@ -80,19 +91,30 @@ class ProductRow extends React.Component {
       this.state = {
         category: [],
       };
+      this.atualizaCategorias = this.atualizaCategorias.bind(this);
             
     }
     componentDidMount(){
-      categoryRepository.getAll().then(response => {	
-        this.setState({
-          category: response.category,
-        })
+      this.atualizaCategorias();
+    }
+    
+    atualizaCategorias(){
+      categoryRepository.getAll().then((response) => {
+        //response.map(function(resp){
+          console.log("atualiza: ", response);
+          this.setState({
+            category: response,
+          })
+  
+        //})
       })
       .catch((err) => {
         console.log('Erro Busca: ',err.message);
       })
 
     }
+
+    
     
     // ============
   
