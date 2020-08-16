@@ -47,7 +47,7 @@ class ProductRow extends React.Component {
   class ProductTable extends React.Component {
     render() {
       const rows = [];    
-      console.log('Tabela: ', this.props.categ)
+      console.log('Tabela: ', this.props.category)
       this.props.category.forEach((category) => {      
         rows.push(
           <ProductRow
@@ -83,10 +83,9 @@ class ProductRow extends React.Component {
             
     }
     componentDidMount(){
-      categoryRepository.getAll()
-      .then(response => {
+      categoryRepository.getAll().then(response => {	
         this.setState({
-          category: response.category
+          category: response.category,
         })
       })
       .catch((err) => {
@@ -113,10 +112,10 @@ class ProductRow extends React.Component {
         <div>    
             <div>
               <div>
-                  <h1>{this.state.category}</h1>
+                  <h1>{console.log(this.state.category)}</h1>
               </div>
                 <ProductTable 
-                   // categ={categ} 
+                   category={this.state.category} 
                    // onClick={value => this.categorySelect(value)}
                     
                 />
