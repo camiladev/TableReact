@@ -15,7 +15,7 @@ export default class InsertItem extends React.Component{
         this.handleChangeName = this.handleChangeName.bind(this);
         this.handleChangeColor = this.handleChangeColor.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.insertItem = this.insertItem.bind(this);
+        
     }
 
     handleChangeName(event){
@@ -46,13 +46,9 @@ export default class InsertItem extends React.Component{
                 cor: cor,
            });   
         event.preventDefault();
-       
+        this.props.onSubmit();
     }
 
-    insertItem(e){
-        this.props.onClick(e);
-        
-    }
 
     render(){
         return(
@@ -74,7 +70,7 @@ export default class InsertItem extends React.Component{
                     />
                     <br />
                     
-                    <input type="submit" value="Insert" onClick={this.insertItem} />
+                    <input type="submit" value="Insert" />
                 </form>
             </div>
         );

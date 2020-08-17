@@ -109,7 +109,7 @@ class ProductRow extends React.Component {
                 <div>
                    <InsertForm
                         //category={this.state.category} 
-                        onClick= {() => this.insertItem()}
+                        onSubmit= {() => this.insertItem()}
                    />   
                 </div>
             <div>                
