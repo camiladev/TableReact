@@ -40,6 +40,161 @@
         "text": "Formação de Jogos na Alura",
         "url": "https://www.alura.com.br/cursos-online-front-end"
       }
+    },
+    {
+      "titulo": "Gumball",
+      "cor": "#2b11e8",
+      "id": 6
+    },
+    {
+      "titulo": "Pernalonga",
+      "cor": "#e87517",
+      "id": 7
+    },
+    {
+      "titulo": "Turma da Monica",
+      "cor": "#f00a0a",
+      "id": 8
+    },
+    {
+      "titulo": "Magali",
+      "cor": "#f7d708",
+      "id": 9
+    },
+    {
+      "titulo": "Cascão",
+      "cor": "#835d49",
+      "id": 10
+    },
+    {
+      "titulo": "teste",
+      "cor": "",
+      "id": 11
+    },
+    {
+      "titulo": "teste",
+      "cor": "#e64747",
+      "id": 12
+    },
+    {
+      "titulo": "teste",
+      "cor": "#de0202",
+      "id": 13
+    },
+    {
+      "titulo": "Tom e Jerry",
+      "cor": "#5764c7",
+      "id": 14
+    },
+    {
+      "titulo": "test 3",
+      "cor": "#c54444",
+      "id": 15
+    },
+    {
+      "titulo": "teste 4",
+      "cor": "#b75757",
+      "id": 16
+    },
+    {
+      "titulo": "Teste 5",
+      "cor": "#ec7e7e",
+      "id": 17
+    },
+    {
+      "titulo": "Teste 6",
+      "cor": "#e08585",
+      "id": 18
+    },
+    {
+      "titulo": "Teste 7",
+      "cor": "#cb5d5d",
+      "id": 19
+    },
+    {
+      "titulo": "Teste 8",
+      "cor": "#1d4b9f",
+      "id": 20
+    },
+    {
+      "titulo": "Teste 9",
+      "cor": "#595e17",
+      "id": 21
+    },
+    {
+      "titulo": "Teste 10",
+      "cor": "#188f0f",
+      "id": 22
+    },
+    {
+      "titulo": "Teste 11",
+      "cor": "#bc0606",
+      "id": 23
+    },
+    {
+      "titulo": "Teste 12",
+      "cor": "#9d4343",
+      "id": 24
+    },
+    {
+      "titulo": "Teste 13",
+      "cor": "#d44e4e",
+      "id": 25
+    },
+    {
+      "titulo": "",
+      "cor": "",
+      "id": 26
+    },
+    {
+      "titulo": "Teste 14",
+      "cor": "#a61111",
+      "id": 27
+    },
+    {
+      "titulo": "Teste 14",
+      "cor": "#a61111",
+      "id": 28
+    },
+    {
+      "titulo": "Teste 15",
+      "cor": "#a61111",
+      "id": 29
+    },
+    {
+      "titulo": "Teste 16",
+      "cor": "#0e9549",
+      "id": 30
+    },
+    {
+      "titulo": "Teste 17",
+      "cor": "#1e7a8a",
+      "id": 31
+    },
+    {
+      "titulo": "Teste 18",
+      "cor": "#a1d70f",
+      "id": 32
+    },
+    {
+      "titulo": "Teste 19",
+      "cor": "#b45f5f",
+      "id": 33
+    },
+    {
+      "titulo": "Teste 19",
+      "cor": "#b45f5f",
+      "id": 34
+    },
+    {
+      "titulo": "Teste 20",
+      "cor": "#d83b3b",
+      "id": 35
+    },
+    {
+      "titulo": "teste 21",
+      "cor": "#d27979",
+      "id": 36
     }
   ],
   "videos": [
