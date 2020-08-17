@@ -108,19 +108,17 @@ class ProductRow extends React.Component {
   
       return (
         <div> 
-            <div>
-                
+                <div>
+                   <InsertForm />   
+                </div>
+            <div>                
                 <ProductTable 
                    category={this.state.category} 
-                   onClick={value => this.categorySelect(value)}
-                    
+                   onClick={value => this.categorySelect(value)}                    
                 />
             </div>    
 
             <div>
-                <div>
-                   <InsertForm />   
-                </div>
             </div>
         </div>
         

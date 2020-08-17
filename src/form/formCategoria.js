@@ -10,8 +10,14 @@ export default class InsertItem extends React.Component{
         return(
             <div>
                 <form>
-                    <label>Nome</label>
+                    <label>Nome:</label>
                     <input type="text" name="nome"></input>
+                    <br />
+                    <label>Cor:</label>
+                    <input type="color" name="cor"></input>
+                    <br />
+                    
+                    <input type="button" name="insert" value="Insert"></input>
                 </form>
             </div>
         );
