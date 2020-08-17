@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import categoryRepository from './repositores/categoria';
+import InsertForm from './form/formCategoria';
 
 function ButtonDelete(props){
     return (
@@ -106,11 +107,9 @@ class ProductRow extends React.Component {
     render() {
   
       return (
-        <div>    
+        <div> 
             <div>
-              <div>
-                  <h1>{console.log(this.state.category)}</h1>
-              </div>
+                
                 <ProductTable 
                    category={this.state.category} 
                    onClick={value => this.categorySelect(value)}
@@ -119,7 +118,9 @@ class ProductRow extends React.Component {
             </div>    
 
             <div>
-                <div></div>
+                <div>
+                   <InsertForm />   
+                </div>
             </div>
         </div>
         
@@ -128,7 +129,7 @@ class ProductRow extends React.Component {
   }
   
 
-  ReactDOM.render(
+  ReactDOM.render(    
     <FilterableProductTable />,
     document.getElementById('root')
   );
