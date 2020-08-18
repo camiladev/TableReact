@@ -67,9 +67,11 @@ class ProductRow extends React.Component {
       super(props);
       this.state = {
         category: [],
+        selecte: [],
       };
       this.atualizaCategorias = this.atualizaCategorias.bind(this);
       this.insertItem = this.insertItem.bind(this);
+      this.deletCategory = this.deletCategory.bind(this);
             
       this.atualizaCategorias();
     }
@@ -93,13 +95,19 @@ class ProductRow extends React.Component {
     }
     
     // ============
-    categorySelect(value){
-        const selecte = value;
-        this.setState = {
-            selecte: selecte,
-        }
-        alert('Selecionado: ' + selecte.id);
-        console.log("Selecionado: ", selecte.titulo);
+    deletCategory(value){
+        let list = this.state.category.slice();
+        let index = list.indexOf(value);
+        let newList = list.splice(index, 1);
+
+        this.setState({
+          category: list,
+        });
+       
+        alert('Selecionado: ' + value.id);
+        console.log("Lista depois: ", newList);
+        console.log("Lista nova: ", list);
+        
     }   
     
     render() {
@@ -108,14 +116,13 @@ class ProductRow extends React.Component {
         <div> 
                 <div>
                    <InsertForm
-                        //category={this.state.category} 
                         onSubmit= {() => this.insertItem()}
                    />   
                 </div>
             <div>                
                 <ProductTable 
                    category={this.state.category} 
-                   onClick={value => this.categorySelect(value)}                    
+                   onClick={value => this.deletCategory(value)}                    
                 />
             </div>    
 
