@@ -99,12 +99,21 @@ class ProductRow extends React.Component {
         let list = this.state.category.slice();
         let index = list.indexOf(value);
         let newList = list.splice(index, 1);
+        var id = value.id;
+
+        categoryRepository.delet(id)
+        .then(resposta => {
+          console.log('Excluido: ',resposta);
+        })
+        .catch(err => {
+          console.log('Erro Exclusão: ',err.message);
+        })
 
         this.setState({
           category: list,
         });
        
-        alert('Selecionado: ' + value.id);
+        alert('Selecionado: ' + id);
         console.log("Lista depois: ", newList);
         console.log("Lista nova: ", list);
         

@@ -35,7 +35,24 @@ function getAll() {
       });
   }
 
+  function delet(id) {
+    console.log("Id recebido", id);
+    return fetch(`${URL_CATEGORIES}/${id}`, {
+      method: 'DELETE',
+    })
+      .then(async (respostaDoServidor) => {  
+
+        if (respostaDoServidor.ok) {
+          const resposta = await respostaDoServidor.json();
+          return resposta;
+        }
+  
+        throw new Error('Não foi possível excluir os dados :(');
+      });
+  }
+
   export default {
     getAll,
     create,
+    delet,
   };
