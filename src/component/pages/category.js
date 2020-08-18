@@ -114,8 +114,7 @@ class ProductRow extends React.Component {
         });
        
         alert('Selecionado: ' + id);
-        console.log("Lista depois: ", newList);
-        console.log("Lista nova: ", list);
+        
         
     }   
     
