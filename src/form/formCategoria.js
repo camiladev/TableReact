@@ -15,6 +15,7 @@ export default class InsertItem extends React.Component{
         this.handleChangeName = this.handleChangeName.bind(this);
         this.handleChangeColor = this.handleChangeColor.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.clearForm = this.clearForm.bind(this);
         
     }
 
@@ -25,6 +26,7 @@ export default class InsertItem extends React.Component{
         this.setState({
             nome: nome,
         });
+        
     }
 
     handleChangeColor(event){
@@ -34,6 +36,7 @@ export default class InsertItem extends React.Component{
         this.setState({
             cor: cor,
         });
+        
     }
 
     handleSubmit(event){
@@ -47,6 +50,15 @@ export default class InsertItem extends React.Component{
            });   
         event.preventDefault();
         this.props.onSubmit();
+        this.clearForm();
+        
+    }
+
+    clearForm(){
+        this.setState({
+            nome: '',
+            cor: '',
+        })
     }
 
 
@@ -58,7 +70,7 @@ export default class InsertItem extends React.Component{
                     <label>Nome:</label>
                     <input type="text" 
                             name="nome"
-                            value={this.state.value}
+                            value={this.state.nome}
                             onChange={this.handleChangeName}
                     />
                     <br />
@@ -71,7 +83,9 @@ export default class InsertItem extends React.Component{
                     <br />
                     
                     <input type="submit" value="Insert" />
+                    
                 </form>
+               
             </div>
         );
     }
