@@ -2,65 +2,8 @@ import React from 'react';
 import '../../index.css';
 import categoryRepository from '../../repositores/categoria';
 import InsertForm from '../../form/formCategoria';
+import ProductTable from '../pages/table';
 
-function ButtonDelete(props){
-    return (
-        <button className="delete"
-                onClick={props.onClick}>
-            Excluir
-        </button>
-    );
-}
-
-class ProductRow extends React.Component {
-    render() {
-      const category = this.props.category;
-
-      return (
-                <tr>
-
-                <td>{category.titulo}</td>
-                <td>{category.cor}</td>
-                <td>
-                  <ButtonDelete value={category}
-                                onClick={() => this.props.onClick(category)}
-                  />
-                </td>
-                </tr>
-
-      );
-    }
-  }
-    
-  
-  class ProductTable extends React.Component {
-    render() {
-      const rows = [];    
-      this.props.category.forEach((category) => {      
-        rows.push(
-          <ProductRow
-            category={category}
-            key={category.id}
-            onClick={() => this.props.onClick(category)}
-         />
-        );
-        
-      });
-  
-      return (
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Cor</th>
-              <th>Excluir</th>
-            </tr>
-          </thead>
-          <tbody>{rows}</tbody>
-        </table>
-      );
-    }
-  }
   
   export default class FilterableProductTable extends React.Component {
     constructor(props){
@@ -72,6 +15,7 @@ class ProductRow extends React.Component {
       this.atualizaCategorias = this.atualizaCategorias.bind(this);
       this.insertItem = this.insertItem.bind(this);
       this.deletCategory = this.deletCategory.bind(this);
+      this.handleClick = this.handleClick.bind(this);
             
       this.atualizaCategorias();
     }
@@ -93,15 +37,33 @@ class ProductRow extends React.Component {
         this.atualizaCategorias();
         console.log("Atualiza: ", this.state.category);
     }
+
+    //============
+
+    handleClick(e, value){
+      var button = e;
+      var id = value.id;
+      
+      console.log('id: ',button);
+      console.log('Name: ',id);
+
+      if (button === "delet") {
+        console.log('Delet?: ',button);
+        this.deletCategory(value)
+      } else {
+        console.log('Edit?: ',button);
+      }
+    }
     
     // ============
     deletCategory(value){
         let list = this.state.category.slice();
         let index = list.indexOf(value);
         let newList = list.splice(index, 1);
-        var id = value.id;
+        var idSel = value.id;
 
-        categoryRepository.delet(id)
+      
+        categoryRepository.delet(idSel)
         .then(resposta => {
           console.log('Excluido: ',resposta);
         })
@@ -113,10 +75,12 @@ class ProductRow extends React.Component {
           category: list,
         });
        
-        alert('Selecionado: ' + id);
+        alert('Selecionado: ' + idSel);
         
         
-    }   
+    }  
+    
+    
     
     render() {
   
@@ -130,7 +94,8 @@ class ProductRow extends React.Component {
             <div>                
                 <ProductTable 
                    category={this.state.category} 
-                   onClick={value => this.deletCategory(value)}                    
+                   //onClick={value => this.deletCategory(value)} 
+                   onClick={(e, value) => this.handleClick(e, value)}                     
                 />
             </div>    
 

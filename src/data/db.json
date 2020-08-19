@@ -1,232 +1,30 @@
 {
   "categorias": [
     {
-      "id": 1,
-      "titulo": "Bibo Pai & Bob Filho",
-      "cor": "#6BD1FF",
-      "link_extra": {
-        "text": "PlayList Completa",
-        "url": "https://www.youtube.com/playlist?list=PL9XROtnbJk0v9EF05PbblMNd8nScMgQuo"
-      }
-    },
-    {
-      "id": 2,
-      "titulo": "Ligeirinho e Patolino",
-      "cor": "#00C86F",
-      "link_extra": {
-        "text": "PlayList Completa",
-        "url": "https://www.youtube.com/playlist?list=PLL-C7zTjjllKSG01iM7tg5-Lto25wC92X"
-      }
-    },
-    {
-      "id": 3,
-      "titulo": "Data Science e Inteligência Artificial",
-      "cor": "#9cd33b",
-      "link_extra": {
-        "text": "Cursos de Data Science na Alura",
-        "url": "https://www.alura.com.br/cursos-online-mobile"
-      }
-    },
-    {
-      "id": 4,
-      "titulo": "Filmes",
-      "cor": "orange"
-    },
-    {
-      "id": 5,
-      "titulo": "Games",
-      "cor": "red",
-      "link_extra": {
-        "text": "Formação de Jogos na Alura",
-        "url": "https://www.alura.com.br/cursos-online-front-end"
-      }
-    },
-    {
-      "titulo": "Gumball",
-      "cor": "#2b11e8",
-      "id": 6
-    },
-    {
-      "titulo": "Pernalonga",
-      "cor": "#e87517",
-      "id": 7
-    },
-    {
       "titulo": "Turma da Monica",
-      "cor": "#f00a0a",
-      "id": 8
+      "cor": "#e81111",
+      "id": 1
     },
     {
       "titulo": "Magali",
-      "cor": "#f7d708",
-      "id": 9
-    },
-    {
-      "titulo": "Cascão",
-      "cor": "#835d49",
-      "id": 10
-    },
-    {
-      "titulo": "Tom e Jerry",
-      "cor": "#5764c7",
-      "id": 14
+      "cor": "#af6060",
+      "id": 2
     },
     {
       "titulo": "Moana",
-      "cor": "#1ec829",
-      "id": 37
+      "cor": "#0ec824",
+      "id": 3
+    },
+    {
+      "titulo": "Frozen",
+      "cor": "#33dbb1",
+      "id": 4
+    },
+    {
+      "titulo": "teste",
+      "cor": "#e70808",
+      "id": 5
     }
   ],
-  "videos": [
-    {
-      "id": 1,
-      "categoriaId": 1,
-      "titulo": "Bibo Pai & Bob Filho - Ep 01 (1ª parte)",
-      "url": "https://www.youtube.com/watch?v=us2TC_YO3sM&list=PL9XROtnbJk0v9EF05PbblMNd8nScMgQuo&index=2&t=0s"
-    },
-    {
-      "id": 2,
-      "categoriaId": 1,
-      "titulo": "Bibo Pai & Bob Filho - Ep 01 (2ª parte)",
-      "url": "https://www.youtube.com/watch?v=e8Om2xqssfw&list=PL9XROtnbJk0v9EF05PbblMNd8nScMgQuo&index=2"
-    },
-    {
-      "id": 3,
-      "categoriaId": 1,
-      "titulo": "Bibo Pai & Bob Filho - Ep 01 (3ª parte - Final)",
-      "url": "https://www.youtube.com/watch?v=aoNAEgcwq7c&list=PL9XROtnbJk0v9EF05PbblMNd8nScMgQuo&index=3"
-    },
-    {
-      "id": 4,
-      "categoriaId": 1,
-      "titulo": "Bibo Pai & Bob Filho - Ep 03 (1ª parte)",
-      "url": "https://www.youtube.com/watch?v=FXAhe1XUhWE&list=PL9XROtnbJk0v9EF05PbblMNd8nScMgQuo&index=7"
-    },
-    {
-      "id": 5,
-      "categoriaId": 1,
-      "titulo": "Bibo Pai & Bob Filho - Ep 03 (2ª parte)",
-      "url": "https://www.youtube.com/watch?v=wzfzPnccFfs&list=PL9XROtnbJk0v9EF05PbblMNd8nScMgQuo&index=8"
-    },
-    {
-      "id": 6,
-      "categoriaId": 1,
-      "titulo": "Bibo Pai & Bob Filho - Ep 03 (3ª parte - Final)",
-      "url": "https://www.youtube.com/watch?v=zx7r-b_HB_M&list=PL9XROtnbJk0v9EF05PbblMNd8nScMgQuo&index=9"
-    },
-    {
-      "id": 8,
-      "categoriaId": 2,
-      "titulo": "Ligeirinho e Patolino - Milho Apimentado",
-      "url": "https://www.youtube.com/watch?v=Vqv68LdirFo&list=PLL-C7zTjjllKSG01iM7tg5-Lto25wC92X&index=2&t=3s"
-    },
-    {
-      "id": 9,
-      "categoriaId": 2,
-      "titulo": "Ligeirinho e Patolino - Pato Congelado",
-      "url": "https://www.youtube.com/watch?v=VvCLFcLKjrw&list=PLL-C7zTjjllKSG01iM7tg5-Lto25wC92X&index=5"
-    },
-    {
-      "id": 10,
-      "categoriaId": 2,
-      "titulo": "Ligeirinho e Patolino - Os Amigos São Para Isso",
-      "url": "https://www.youtube.com/watch?v=Iqp2ucOcRfI&list=PLL-C7zTjjllKSG01iM7tg5-Lto25wC92X&index=2"
-    },
-    {
-      "id": 11,
-      "categoriaId": 2,
-      "titulo": "Ligeirinho e Patolino - Os Náufragos",
-      "url": "https://www.youtube.com/watch?v=w6kn3GulSxk&list=PLL-C7zTjjllKSG01iM7tg5-Lto25wC92X&index=3"
-    },
-    {
-      "id": 12,
-      "categoriaId": 2,
-      "titulo": "Ligeirinho e Patolino - Gosto de Erva de Gato",
-      "url": "https://www.youtube.com/watch?v=V3k0NrZREj8&list=PLL-C7zTjjllKSG01iM7tg5-Lto25wC92X&index=4"
-    },
-    {
-      "id": 13,
-      "categoriaId": 3,
-      "titulo": "Teste de Turing",
-      "url": "https://www.youtube.com/watch?v=BaPGU4JWa34"
-    },
-    {
-      "id": 14,
-      "categoriaId": 3,
-      "titulo": "O que é Data Science?",
-      "url": "https://www.youtube.com/watch?v=5b9Z8toVaAU&t=9s"
-    },
-    {
-      "id": 15,
-      "categoriaId": 3,
-      "titulo": "Melhor forma de aprender Python",
-      "url": "https://www.youtube.com/watch?v=Gojqw9BQ5qY"
-    },
-    {
-      "id": 16,
-      "categoriaId": 3,
-      "titulo": "Como ingressar no mercado de Data Science?",
-      "url": "https://www.youtube.com/watch?v=gxyjGmOV540"
-    },
-    {
-      "id": 17,
-      "categoriaId": 4,
-      "titulo": "Interestellar",
-      "url": "https://www.youtube.com/watch?v=frD_IiY_A3E"
-    },
-    {
-      "id": 18,
-      "categoriaId": 4,
-      "titulo": "Gattaca",
-      "url": "https://www.youtube.com/watch?v=Dl0tYLbrhhs"
-    },
-    {
-      "id": 19,
-      "categoriaId": 4,
-      "titulo": "A Chegada",
-      "url": "https://www.youtube.com/watch?v=rNciXGzYZms"
-    },
-    {
-      "id": 20,
-      "categoriaId": 4,
-      "titulo": "Feitiço do Tempo",
-      "url": "https://www.youtube.com/watch?v=zi8d69P9NvI"
-    },
-    {
-      "id": 21,
-      "categoriaId": 5,
-      "titulo": "Final Fantasy 7",
-      "url": "https://www.youtube.com/watch?v=I_ATSCTnUD8"
-    },
-    {
-      "id": 22,
-      "categoriaId": 5,
-      "titulo": "Assassins Creed Valhalla",
-      "url": "https://www.youtube.com/watch?v=KDfdjB9uL0U"
-    },
-    {
-      "id": 23,
-      "categoriaId": 5,
-      "titulo": "God of War 4",
-      "url": "https://www.youtube.com/watch?v=FyIwEFXOcaE"
-    },
-    {
-      "id": 24,
-      "categoriaId": 5,
-      "titulo": "Resident Evil 8",
-      "url": "https://www.youtube.com/watch?v=JSapXD9vxYA"
-    },
-    {
-      "titulo": "Video padrão",
-      "url": "https://www.youtube.com/watch?v=jOAU81jdi-c",
-      "categoriaId": 1,
-      "id": 25
-    },
-    {
-      "titulo": "Video padrão",
-      "url": "https://www.youtube.com/watch?v=jOAU81jdi-c",
-      "categoriaId": 2,
-      "id": 26
-    }
-  ]
+  "videos": []
 }
