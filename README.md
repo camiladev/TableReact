@@ -1,3 +1,15 @@
+## TablerReact
+
+Este projeto iniciou como uma parte de outro projeto, quando inicei ele pensei em só fazer uma tabela usando corretamente o Reactjs. Achei que seria simples porem me surpreendi com tanta conceito que aprendi e que ainda estou aprendendo.
+
+Durante o desenvolvimento deste projeto aprendi:
+
+O conceito de JSX e como incorporar expressões JavaScript;
+O conceito de componentes e como eles se comportam em funções e em classes;
+Estudei bastante sobre o State e ciclo de vida dele, essa parte foi dificil de enteder o como ele se comporta dentro da Classe.
+Criei uma tabela dinamica que busca os dados salvos no arquivo json. 
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

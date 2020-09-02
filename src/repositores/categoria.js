@@ -35,6 +35,28 @@ function getAll() {
       });
   }
 
+  function update(newValue){
+    console.log('Value received: ', newValue.id);
+    
+    return fetch(`${URL_CATEGORIES}/${newValue.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(newValue),
+    })
+      .then(async (respostaDoServidor) => {  
+
+        if (respostaDoServidor.ok) {
+          const resposta = await respostaDoServidor.json();
+          return resposta;
+        }
+  
+        throw new Error('Não foi possível excluir os dados :(');
+      });
+
+  }
+
   function delet(id) {
     console.log("Id recebido", id);
     return fetch(`${URL_CATEGORIES}/${id}`, {
@@ -54,5 +76,6 @@ function getAll() {
   export default {
     getAll,
     create,
+    update,
     delet,
   };

@@ -1,8 +1,9 @@
 import React from 'react';
 import '../../index.css';
 import categoryRepository from '../../repositores/categoria';
-import InsertForm from '../../form/formCategoria';
+
 import ProductTable from '../pages/table';
+import SelectForm from '../../form/selectForm';
 
   
   export default class FilterableProductTable extends React.Component {
@@ -10,17 +11,30 @@ import ProductTable from '../pages/table';
       super(props);
       this.state = {
         category: [],
-        selecte: [],
+        requestedForm:'',
+        valueEdit:[],
       };
-      this.atualizaCategorias = this.atualizaCategorias.bind(this);
-      this.insertItem = this.insertItem.bind(this);
+      this.updateTable = this.updateTable.bind(this);
+      this.updateCategory = this.updateCategory.bind(this);
       this.deletCategory = this.deletCategory.bind(this);
       this.handleClick = this.handleClick.bind(this);
+      this.editCategory = this.editCategory.bind(this);
             
-      this.atualizaCategorias();
+      
+    }
+
+    componentDidMount() {
+      this.updateTable();
+      this.updateRequest('Insert');
+    }
+
+    updateRequest(request){
+        this.setState({
+          requestedForm: request,
+        })
     }
        
-    atualizaCategorias(){
+    updateTable(){
       categoryRepository.getAll().then((response) => {
           this.setState({
             category: response,
@@ -33,26 +47,33 @@ import ProductTable from '../pages/table';
     }    
     
     // ============
-    insertItem(){
-        this.atualizaCategorias();
-        console.log("Atualiza: ", this.state.category);
+    updateCategory(){
+      this.updateRequest('Insert');
+      this.updateTable();
+       
     }
 
     //============
 
     handleClick(e, value){
-      var button = e;
-      var id = value.id;
-      
-      console.log('id: ',button);
-      console.log('Name: ',id);
-
-      if (button === "delet") {
-        console.log('Delet?: ',button);
-        this.deletCategory(value)
-      } else {
-        console.log('Edit?: ',button);
+            
+      if (e === "delet") {
+          this.deletCategory(value);
+      } else {        
+          this.updateRequest('Edit');
+          //Passar os dados velhos
+          this.setState({
+            valueEdit: value,
+          })
+        
       }
+    }
+
+    // ============Pega os dados novos
+    editCategory(value){
+      var newName = value;
+      console.log('edtCategory: ' + value)
+
     }
     
     // ============
@@ -83,27 +104,29 @@ import ProductTable from '../pages/table';
     
     
     render() {
+    const requestedForm = this.state.requestedForm;    
+    const valueEdit = this.state.valueEdit;
+    console.log("Value edit: ", valueEdit);
+        return(
+          <div>
   
-      return (
-        <div> 
-                <div>
-                   <InsertForm
-                        onSubmit= {() => this.insertItem()}
-                   />   
+              <div>
+                    <SelectForm 
+                          requestedForm={requestedForm} 
+                          onSubmit={() => this.updateCategory()}
+                          valueEdit={valueEdit}
+                    />
                 </div>
-            <div>                
-                <ProductTable 
-                   category={this.state.category} 
-                   //onClick={value => this.deletCategory(value)} 
-                   onClick={(e, value) => this.handleClick(e, value)}                     
-                />
-            </div>    
-
-            <div>
-            </div>
-        </div>
-        
-      );
+                  <div>                
+                      <ProductTable 
+                        category={this.state.category} 
+                        onClick={(e, value) => this.handleClick(e, value)}                     
+                      />
+                </div>    
+  
+          </div>
+        )
+      
     }
   }
   
