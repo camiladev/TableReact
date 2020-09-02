@@ -9,6 +9,14 @@ O conceito de componentes e como eles se comportam em funções e em classes;
 Estudei bastante sobre o State e ciclo de vida dele, essa parte foi dificil de enteder o como ele se comporta dentro da Classe.
 Criei uma tabela dinamica que busca os dados salvos no arquivo json. 
 
+### Comandos necessários
+
+Para que o projeto rode em sua maquina é necessário executar os seguintes comandos na pasta do projeto:
+
+`npm install` -> Para instalar as dependencias utilizadas
+`npm run server`  -> Para rodar o server local
+`npm start`  -> Para executar a pagina no seu navegador, localmente
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
